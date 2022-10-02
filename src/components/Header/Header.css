@@ -7,3 +7,7 @@
 .header a:hover {
     background-color: orange;
 }
+
+.active {
+    background-color: blueviolet;
+}
