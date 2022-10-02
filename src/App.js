@@ -5,6 +5,7 @@ import About from './components/About/About';
 import Product from './components/Products/Product';
 import Main from './layout/Main';
 import News from './components/News/News';
+import PostDetails from './components/PostDetails/PostDetails';
 
 function App() {
   const router = createBrowserRouter([
@@ -20,6 +21,14 @@ function App() {
             /* dynamic data loading */
           },
           element: <News></News>
+        },
+        {
+          path: '/news/:postId', /* dynamic path */
+          loader: async ({ params }) => {
+            // console.log(params)
+            return fetch(`https://jsonplaceholder.typicode.com/posts?id=${params.postId}`)
+          },
+          element: <PostDetails></PostDetails>
         }
       ]
     },

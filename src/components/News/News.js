@@ -5,7 +5,6 @@ import Post from '../Post/Post';
 
 const News = () => {
     const posts = useLoaderData();/* dynamic data loading */
-    console.log(posts)
     return (
         <div className='news'>
             {
