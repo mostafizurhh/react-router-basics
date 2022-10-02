@@ -5,13 +5,16 @@ import './Header.css'
 const Header = () => {
     return (
         <div className='header'>
-            <Link to='/home'>Home</Link>
-            <Link to='/about'>About</Link>
-            <Link to='/products'>Products</Link>
+            <nav>
+                <Link to='/home'>Home</Link>
+                <Link to='/about'>About</Link>
+                <Link to='/products'>Products</Link>
+                <Link to='/news'>News</Link>
+            </nav>
 
-
-            <a href="/home">Home</a>
-            <a href="/about">About</a>
+            <h4>Common Header</h4>
+            {/* <a href="/home">Home</a>
+            <a href="/about">About</a> */}
         </div>
     );
 };
