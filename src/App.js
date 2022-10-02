@@ -13,11 +13,19 @@ function App() {
         { path: '/', element: <Home></Home> },
         { path: '/home', element: <Home></Home> },
         { path: '/products', element: <Product></Product> },
-        { path: '/news', element: <News></News> }
+        {
+          path: '/news',
+          loader: async () => {
+            return fetch('https://jsonplaceholder.typicode.com/posts')
+            /* dynamic data loading */
+          },
+          element: <News></News>
+        }
       ]
     },
 
-    { path: '/about', element: <About></About> }
+    { path: '/about', element: <About></About> },
+    { path: '*', element: <div>This is not found</div> } /* error message */
 
   ])
   return (
